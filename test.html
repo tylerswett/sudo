@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unix Commands Test</title>
+  <script>
+    var dir=["documents","links","desktop", "favorites"];
+    var currDir = "";
+      function show(){
+        //console.log(document.getElementById("cmd").value);
+        var input = document.getElementById("cmd").value.toLowerCase();
+        if ( input == "ls"){
+          document.getElementById("output").innerHTML = dir;
+        }
+        if (input.slice(0,5) == "mkdir"){
+          dir.push(input.slice(6));
+        }
+        /*if (input.slice(0,2) == "cd"){
+          var a = input.slice(3);
+          var i = dir.indexOf(a);
+          currDir = dir[i];
+          document.getElementById("working").innerHTML = "Current Working Directory: " + currDir;
+        }*/
+        if (input.slice(0,2) == "cd"){
+        	var a = input.slice(3);
+        	for (var i = 0; i <=dir.length; i++ ){
+        		if(dir[i]== a){
+        			currDir = dir[i];
+        			console.log(currDir);
+              document.getElementById("working").innerHTML = "Current Working Directory: " + currDir;
+              break;
+        		}
+            else {
+              document.getElementById("working").innerHTML = "Directory does not exist";
+            }
+        	}
+        }
+        /*else{
+          document.getElementById("output").innerHTML = "Command Unknown";
+          console.log(input);
+        }*/
+      }
+  </script>
+</head>
+<body>
+  <form method="get">
+    Type a Command: <br>
+
+     <input type="text" name="cmd" id="cmd" placeholder="ls">
+    <br>
+    <div class="working" id="working"></div>
+    <br>
+    <div class="output" id="output"></div>
+    <br>
+    <input type="button" id="submit" value="Submit" onclick="show()">
+  </form>
+</body>
+</html>
