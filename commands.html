@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Unix University</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="//use.typekit.net/rlt8bon.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <script>
+  	function changeBgColor() {
+  		document.body.style.backgroundColor=getComputedStyle(document.getElementById("currentitem")).backgroundColor;
+   	}
+  </script>
+	
+
+</head>
+
+<body onload="changeBgColor();">
+	<div id="header">
+		<div id="title">
+			<div id="logo">>_</div>
+			Unix University
+		</div>
+		
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a><div></div></li>
+				<li><a href="tutorials.html">Tutorials</a></li>
+				<li><a href="console.html">Console</a></li>
+				<li id="currentitem"><a href="commands.html">Commands</a></li>
+				<li><a href="advanced.html">Advanced</a></li>
+			</ul>
+		</nav>
+	</div>
+</body>
+</html>
