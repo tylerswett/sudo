@@ -9,23 +9,39 @@
   <link rel="stylesheet" href="style.css">
   <script src="//use.typekit.net/rlt8bon.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script>
-  	function changeBgColor() {
-  		document.body.style.backgroundColor=getComputedStyle(document.getElementById("currentitem")).backgroundColor;
-   	}
+        function changeBgColor() {
+            document.body.style.backgroundColor=getComputedStyle(document.getElementById("currentitem")).backgroundColor;
+        }
+      
+      function adjustContentSize() {
+        document.getElementById("terminal").style.width = ($(window).width()-70).toString() + "px";
+        document.getElementById("terminal").style.height = (($(window).height()-270)).toString() + "px";
+    }
+
+    $(window).resize(function () {
+      adjustContentSize();
+    });
   </script>
+    
+    <style>
+        #terminal {
+            left: 20px;
+            box-shadow: none;
+    </style>
 	
 
 </head>
 
-<body onload="changeBgColor();">
+<body onload="changeBgColor(); adjustContentSize();">
 	<div id="header">
 		<div id="title">
 			<div id="logo">>_</div>
 			Unix University
 		</div>
 		
-		<nav>
+		<nav id="global">
 			<ul>
 				<li><a href="index.html">Home</a><div></div></li>
 				<li><a href="tutorials.html">Tutorials</a></li>
@@ -35,5 +51,7 @@
 			</ul>
 		</nav>
 	</div>
+    
+    <div id="terminal">>_</div>
 </body>
 </html>

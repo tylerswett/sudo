@@ -3,13 +3,27 @@
 	margin: 0;
 }
 
+body {
+    font-family: sans-serif;
+}
+
 li {
 	margin-left:0;
 	padding-left:0;
 }
 
+h1 {
+    font-family: 'orator std';
+}
+
+/* Top Header Bar */
+
 #header {
-	font-family: "orator-std" sans-serif;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	font-family: 'orator std', sans-serif;
 }
 
 #title {
@@ -24,18 +38,38 @@ li {
 #logo {
 	display: inline-block;
 	border-radius:50%;
-	padding-top: 20px;
-	padding-bottom:20px;
+	padding-top: 30px;
+	padding-bottom:15px;
 	padding-right:25px;
-	padding-left:20px;
+	padding-left: 20px;
 	margin-right: 20px;
 	color: #192938;
 	background-color: white;
 	
 }
 
+#topbar {
+    width: 100%;
+    height: 14px;
+    margin-top: 4px;
+    background-color: white;
+}
+
+/* Style user login */
+
+#userarea {
+    font-size: 12px;
+    width: 300px;
+    height: 100px;
+    font-family: sans-serif;
+    /* display: inline-block; */
+    display: none;
+}
+
+/* Global Navigation */
+
 nav a {
-	color:white;
+	color: white;
 	text-decoration: none;
 }
 
@@ -62,7 +96,7 @@ nav ul li a {
 	text-align: center;
 	margin-top: 9px;
 	padding-top: 5px;
-	padding-bottom: 10px;
+	padding-bottom: 5px;
 }
 
 nav ul li:nth-of-type(1) {
@@ -91,13 +125,133 @@ nav ul li:nth-of-type(5) {
 }
 
 #currentitem {
-	height: 60px;
+	height: 54px;
 	border-bottom: none;
 }
 
 #currentitem a {
 	color: #2B2B2B; 
 }
+
+/* Top bar hides overflow scrolling content */
+#topbar {
+	position: fixed;
+	top: 190px;
+	height: 25px;
+	width: 100%;
+}
+
+/* Inner Content Styles */
+#inner-content {
+	position: fixed;
+	top: 215px;
+	left: 20px;
+}
+
+
+/* Local Navigation */
+#local {
+    font-family: 'orator std';
+    color: white;
+    text-decoration: underline;
+    font-size: 20px;
+	margin-left: 10px;
+	text-align: center;
+	position: fixed;
+	top: 215px;
+	left: 20px;
+	width: 200px;
+	padding: 15px 0;
+	background-color: #0b5e66;
+}
+
+#local ul {
+	padding: 0;
+	margin: 0;
+}
+
+#local ul li {
+	margin-top: 10px;
+	list-style-type: none;
+	font-size: 20px;
+}
+
+#local ul li a {
+	color: white;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#currentlocal {
+	width: 220px;
+}
+
+#currentlocal a {
+	background-color: #0CB6C5;
+	box-shadow: 0px 0px 5px #222;
+	position: relative;
+	height: 20px;
+	left: -10px;
+}
+
+#currentlocal::after {
+    content: "";
+    width: 200px; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 5px solid #192938;
+    position: absolute;
+    left: -10px;
+    z-index: -1000;
+}
+
+/* Style the jump bar */
+#jumpbar {
+    position: fixed;
+    top: 215px;
+    right: 15px;
+    width: 35px;
+    text-align: center;
+    padding: 10px 0;
+    color: white;
+}
+
+#jumpbar a {
+    color: white;
+    text-decoration: none;
+}
+
+#jumpbar a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Style the terminal emulator */
+#terminal {
+	background-color: #192938;
+	border: 10px solid #BFBFBF;
+	position: fixed;
+	top: 215px;
+	left: 270px;	
+	color: white;
+	padding: 5px;
+	box-shadow: 0px 0px 10px black;
+}
+
+#content {
+	background-color: white;
+	margin-left: 280px;	
+	color: black;
+	padding: 20px 10px 10px 10px;
+	overflow: scroll;
+}
+
 
 @media (max-width:700px) {
 	nav ul li {
